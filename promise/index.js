@@ -18,13 +18,7 @@ const saveUser = (userData) => {
       },
       body: JSON.stringify(userData),
     }
-  );
-
-  // input: callback
-  // ----- input: promise result
-  // ----- output: any
-  // output: promise
-  httpPromise
+  )
     .then((response) => {
       return response.json();
     })
@@ -40,3 +34,11 @@ const user = {
 };
 
 saveUser(user);
+
+fetch('https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(userData),
+});
